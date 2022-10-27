@@ -92,6 +92,11 @@ function change_value(){ // is triggered when a user changes a value in a cell o
             switch(params[2]){                           // params[2] is the field name 
                 case "first_name":                       // validating the first_name field of the employee table  
                     console.log("changing first name")
+                    if(this.value.length < 2){
+                    this.focus()                         // put the focus of the user back on the field 
+                        alert('First name must be at least 2 characters') // let the user know the problem
+                        return                          // prevents it from continuing and submiting to the server
+                    }
                     break
                 default:    
             }
